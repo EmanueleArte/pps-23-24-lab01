@@ -45,4 +45,18 @@ public class CircularListTest {
         assertEquals(circularList.next().orElse(null), element);
     }
 
+    @Test
+    public void testNextElementCircular() {
+        final int element1 = 1;
+        final int element2 = 2;
+        final int element3 = 3;
+        circularList.add(element1);
+        circularList.add(element2);
+        circularList.add(element3);
+        assertEquals(circularList.next().orElse(null), element1);
+        assertEquals(circularList.next().orElse(null), element2);
+        assertEquals(circularList.next().orElse(null), element3);
+        assertEquals(circularList.next().orElse(null), element1);
+    }
+
 }
