@@ -74,4 +74,7 @@ gradle-app.setting
 # Java heap dump
 *.hprof
 
+### Mac files ###
+.DS_Store
+
 # End of https://www.toptal.com/developers/gitignore/api/gradle,visualstudiocode,java
