@@ -38,4 +38,11 @@ public class CircularListTest {
         assertEquals(circularList.size(), 2);
     }
 
+    @Test
+    public void testNextElement() {
+        final int element = 1;
+        circularList.add(element);
+        assertEquals(circularList.next().orElse(null), element);
+    }
+
 }
