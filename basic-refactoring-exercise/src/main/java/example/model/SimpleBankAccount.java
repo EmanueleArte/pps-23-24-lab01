@@ -7,8 +7,8 @@ package example.model;
  */
 public class SimpleBankAccount implements BankAccount {
 
-    private double balance;
-    private final AccountHolder holder;
+    protected double balance;
+    protected final AccountHolder holder;
 
     public SimpleBankAccount(final AccountHolder holder, final double balance) {
         this.holder = holder;
