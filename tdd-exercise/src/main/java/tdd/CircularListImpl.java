@@ -1,8 +1,18 @@
 package tdd;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class CircularListImpl implements CircularList {
+
+    private int currentIndex = 0;
+    private final List<Integer> list;
+
+    public CircularListImpl() {
+        this.list = new ArrayList<>();
+    }
+
     @Override
     public void add(int element) {
 
@@ -15,7 +25,7 @@ public class CircularListImpl implements CircularList {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return this.list.isEmpty();
     }
 
     @Override
