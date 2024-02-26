@@ -42,7 +42,7 @@ public class SimpleBankAccount implements BankAccount {
         return this.balance >= amount;
     }
 
-    private boolean checkUser(final int id) {
+    protected boolean checkUser(final int id) {
         return this.holder.getId() == id;
     }
 }
