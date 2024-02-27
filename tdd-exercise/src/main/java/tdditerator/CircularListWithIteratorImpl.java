@@ -36,12 +36,18 @@ public class CircularListWithIteratorImpl implements CircularListWithIterator {
 
             @Override
             public boolean hasNext() {
+                this.currentIndex = circularizeIndex(this.currentIndex);
                 return this.currentIndex < size();
             }
 
             @Override
             public Optional<Integer> next() {
+                this.currentIndex = circularizeIndex(this.currentIndex);
                 return Optional.of(list.get(this.currentIndex++));
+            }
+
+            private int circularizeIndex(int index) {
+                return size() == 0 ? 0 : index % size();
             }
         };
     }
