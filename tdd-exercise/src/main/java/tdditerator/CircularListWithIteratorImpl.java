@@ -3,6 +3,7 @@ package tdditerator;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 public class CircularListWithIteratorImpl implements CircularListWithIterator {
 
@@ -28,8 +29,21 @@ public class CircularListWithIteratorImpl implements CircularListWithIterator {
     }
 
     @Override
-    public Iterator<Integer> forwardIterator() {
-        return this.list.listIterator();
+    public Iterator<Optional<Integer>> forwardIterator() {
+        return new Iterator<>() {
+
+            private int currentIndex = 0;
+
+            @Override
+            public boolean hasNext() {
+                return this.currentIndex < size();
+            }
+
+            @Override
+            public Optional<Integer> next() {
+                return Optional.of(list.get(this.currentIndex++));
+            }
+        };
     }
 
 }

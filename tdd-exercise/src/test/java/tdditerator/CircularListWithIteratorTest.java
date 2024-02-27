@@ -40,9 +40,13 @@ public class CircularListWithIteratorTest {
 
     @Test
     public void testNextElement() {
+        assertFalse(circularList.forwardIterator().hasNext());
         final int element = 1;
         circularList.add(element);
-        assertEquals(circularList.forwardIterator().next(), element);
+        assertTrue(circularList.forwardIterator().hasNext());
+        assertEquals(circularList.forwardIterator().next().orElse(null), element);
     }
+
+
 
 }

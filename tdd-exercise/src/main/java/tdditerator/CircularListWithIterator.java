@@ -1,6 +1,7 @@
 package tdditerator;
 
 import java.util.Iterator;
+import java.util.Optional;
 
 /**
  * Represents a list of integers, that provides bidirectional and circular iterators.
@@ -32,6 +33,6 @@ public interface CircularListWithIterator {
      * Provides an iterator that goes forward through the list.
      * @return an iterator that goes forward through the list
      */
-    Iterator<Integer> forwardIterator();
+    Iterator<Optional<Integer>> forwardIterator();
 
 }
