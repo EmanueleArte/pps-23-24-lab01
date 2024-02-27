@@ -20,4 +20,10 @@ public interface CircularListWithIterator {
      */
     void add(final int element);
 
+    /**
+     * Provides the current size of the list
+     * @return the size of the list
+     */
+    int size();
+
 }

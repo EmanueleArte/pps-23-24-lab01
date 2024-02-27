@@ -21,5 +21,10 @@ public class CircularListWithIteratorImpl implements CircularListWithIterator {
         this.list.add(element);
     }
 
+    @Override
+    public int size() {
+        return this.list.size();
+    }
+
 
 }
