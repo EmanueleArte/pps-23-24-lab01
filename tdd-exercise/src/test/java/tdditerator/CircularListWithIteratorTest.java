@@ -38,4 +38,11 @@ public class CircularListWithIteratorTest {
         assertEquals(circularList.size(), 2);
     }
 
+    @Test
+    public void testNextElement() {
+        final int element = 1;
+        circularList.add(element);
+        assertEquals(circularList.forwarditerator(), element);
+    }
+
 }
