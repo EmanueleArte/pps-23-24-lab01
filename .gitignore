@@ -77,4 +77,7 @@ gradle-app.setting
 ### Mac files ###
 .DS_Store
 
+### Intellij ###
+.idea/
+
 # End of https://www.toptal.com/developers/gitignore/api/gradle,visualstudiocode,java
