@@ -1,6 +1,7 @@
 package tdditerator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class CircularListWithIteratorImpl implements CircularListWithIterator {
@@ -26,5 +27,9 @@ public class CircularListWithIteratorImpl implements CircularListWithIterator {
         return this.list.size();
     }
 
+    @Override
+    public Iterator<Integer> forwardIterator() {
+        return this.list.listIterator();
+    }
 
 }
