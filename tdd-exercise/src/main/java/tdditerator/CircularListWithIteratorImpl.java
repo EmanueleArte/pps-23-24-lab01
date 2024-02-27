@@ -52,4 +52,28 @@ public class CircularListWithIteratorImpl implements CircularListWithIterator {
         };
     }
 
+    @Override
+    public Iterator<Optional<Integer>> backwardIterator() {
+        return new Iterator<>() {
+
+            private int currentIndex = size();
+
+            @Override
+            public boolean hasNext() {
+                return this.currentIndex >= 0 && size() > 0;
+            }
+
+            @Override
+            public Optional<Integer> next() {
+                this.currentIndex = circularizeIndex(this.currentIndex);
+                return Optional.of(list.get(this.currentIndex));
+            }
+
+            private int circularizeIndex(int index) {
+                return --index < 0 ? size() - 1 : index;
+            }
+        };
+    }
+
+
 }

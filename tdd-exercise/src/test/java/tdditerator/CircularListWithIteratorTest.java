@@ -68,6 +68,7 @@ public class CircularListWithIteratorTest {
 
     @Test
     public void testPreviousElement() {
+        assertFalse(circularList.backwardIterator().hasNext());
         final int element1 = 1;
         final int element2 = 2;
         circularList.add(element1);
