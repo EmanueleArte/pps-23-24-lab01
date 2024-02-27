@@ -22,4 +22,11 @@ public class CircularListWithIteratorTest {
         assertTrue(circularList.isEmpty());
     }
 
+    @Test
+    public void testAddElement() {
+        final int element = 1;
+        circularList.add(element);
+        assertFalse(circularList.isEmpty());
+    }
+
 }
