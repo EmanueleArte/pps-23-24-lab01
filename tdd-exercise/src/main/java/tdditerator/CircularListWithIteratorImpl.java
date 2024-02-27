@@ -15,4 +15,11 @@ public class CircularListWithIteratorImpl implements CircularListWithIterator {
     public boolean isEmpty() {
         return this.list.isEmpty();
     }
+
+    @Override
+    public void add(int element) {
+        this.list.add(element);
+    }
+
+
 }
