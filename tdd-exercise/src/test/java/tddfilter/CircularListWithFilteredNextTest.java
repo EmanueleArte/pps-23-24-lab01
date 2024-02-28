@@ -34,4 +34,17 @@ public class CircularListWithFilteredNextTest {
         assertEquals(element3, circularList.filteredNext(i -> i > 2).orElse(null));
     }
 
+    @Test
+    public void testNextFilteredElementCircular() {
+        final int element1 = 1;
+        final int element2 = 2;
+        final int element3 = 3;
+        circularList.add(element1);
+        circularList.add(element2);
+        circularList.add(element3);
+        circularList.next();
+        assertNull(circularList.filteredNext(i -> i > 5).orElse(null));
+        assertEquals(element2, circularList.filteredNext(i -> i > 1).orElse(null));
+    }
+
 }
