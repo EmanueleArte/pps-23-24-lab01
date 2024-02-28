@@ -47,7 +47,7 @@ public class CircularListWithIteratorTest {
         final int element = 1;
         circularList.add(element);
         assertTrue(circularList.forwardIterator().hasNext());
-        assertEquals(circularList.forwardIterator().next().orElse(null), element);
+        assertEquals(element, circularList.forwardIterator().next().orElse(null));
     }
 
     @Test
@@ -59,11 +59,11 @@ public class CircularListWithIteratorTest {
         circularList.add(element2);
         circularList.add(element3);
         final Iterator<Optional<Integer>> forwardIterator = circularList.forwardIterator();
-        assertEquals(forwardIterator.next().orElse(null), element1);
-        assertEquals(forwardIterator.next().orElse(null), element2);
-        assertEquals(forwardIterator.next().orElse(null), element3);
+        assertEquals(element1, forwardIterator.next().orElse(null));
+        assertEquals(element2, forwardIterator.next().orElse(null));
+        assertEquals(element3, forwardIterator.next().orElse(null));
         assertTrue(forwardIterator.hasNext());
-        assertEquals(forwardIterator.next().orElse(null), element1);
+        assertEquals(element1, forwardIterator.next().orElse(null));
     }
 
     @Test
@@ -73,7 +73,7 @@ public class CircularListWithIteratorTest {
         final int element2 = 2;
         circularList.add(element1);
         circularList.add(element2);
-        assertEquals(circularList.backwardIterator().next().orElse(null), element2);
+        assertEquals(element2, circularList.backwardIterator().next().orElse(null));
     }
 
     @Test
@@ -85,11 +85,11 @@ public class CircularListWithIteratorTest {
         circularList.add(element2);
         circularList.add(element3);
         final Iterator<Optional<Integer>> backwardIterator = circularList.backwardIterator();
-        assertEquals(backwardIterator.next().orElse(null), element3);
-        assertEquals(backwardIterator.next().orElse(null), element2);
-        assertEquals(backwardIterator.next().orElse(null), element1);
+        assertEquals(element3, backwardIterator.next().orElse(null));
+        assertEquals(element2, backwardIterator.next().orElse(null));
+        assertEquals(element1, backwardIterator.next().orElse(null));
         assertTrue(backwardIterator.hasNext());
-        assertEquals(backwardIterator.next().orElse(null), element3);
+        assertEquals(element3, backwardIterator.next().orElse(null));
     }
 
 }
