@@ -14,6 +14,9 @@ public class CircularListWithFilteredNextImpl extends CircularListImpl implement
 
     @Override
     public Optional<Integer> filteredNext(Predicate<Integer> condition) {
+        if (this.size() == 0) {
+            return Optional.empty();
+        }
         return null;
     }
 }
