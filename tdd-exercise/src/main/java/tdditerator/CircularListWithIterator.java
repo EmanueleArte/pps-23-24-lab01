@@ -31,13 +31,15 @@ public interface CircularListWithIterator {
 
     /**
      * Provides an iterator that goes forward through the list.
-     * @return an iterator that goes forward through the list, or an empty optional if the list is empty
+     * @return an iterator that goes forward through the list, or an empty optional when iterating
+     * if the list is empty
      */
     Iterator<Optional<Integer>> forwardIterator();
 
     /**
      * Provides an iterator that goes backward through the list.
-     * @return an iterator that goes backward through the list, or an empty optional if the list is empty
+     * @return an iterator that goes backward through the list, or an empty optional when iterating
+     * if the list is empty
      */
     Iterator<Optional<Integer>> backwardIterator();
 
