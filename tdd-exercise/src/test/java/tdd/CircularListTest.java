@@ -30,18 +30,18 @@ public class CircularListTest {
 
     @Test
     public void testListSize() {
-        assertEquals(circularList.size(), 0);
+        assertEquals(0, circularList.size());
         final int element = 1;
         circularList.add(element);
         circularList.add(element);
-        assertEquals(circularList.size(), 2);
+        assertEquals(2, circularList.size());
     }
 
     @Test
     public void testNextElement() {
         final int element = 1;
         circularList.add(element);
-        assertEquals(circularList.next().orElse(null), element);
+        assertEquals(element, circularList.next().orElse(null));
     }
 
     @Test
@@ -52,10 +52,10 @@ public class CircularListTest {
         circularList.add(element1);
         circularList.add(element2);
         circularList.add(element3);
-        assertEquals(circularList.next().orElse(null), element1);
-        assertEquals(circularList.next().orElse(null), element2);
-        assertEquals(circularList.next().orElse(null), element3);
-        assertEquals(circularList.next().orElse(null), element1);
+        assertEquals(element1, circularList.next().orElse(null));
+        assertEquals(element2, circularList.next().orElse(null));
+        assertEquals(element3, circularList.next().orElse(null));
+        assertEquals(element1, circularList.next().orElse(null));
     }
 
     @Test
@@ -64,7 +64,7 @@ public class CircularListTest {
         circularList.add(element);
         circularList.add(element + 1);
         circularList.next();
-        assertEquals(circularList.previous().orElse(null), element);
+        assertEquals(element, circularList.previous().orElse(null));
     }
 
     @Test
@@ -75,10 +75,10 @@ public class CircularListTest {
         circularList.add(element1);
         circularList.add(element2);
         circularList.add(element3);
-        assertEquals(circularList.previous().orElse(null), element3);
-        assertEquals(circularList.previous().orElse(null), element2);
-        assertEquals(circularList.previous().orElse(null), element1);
-        assertEquals(circularList.previous().orElse(null), element3);
+        assertEquals(element3, circularList.previous().orElse(null));
+        assertEquals(element2, circularList.previous().orElse(null));
+        assertEquals(element1, circularList.previous().orElse(null));
+        assertEquals(element3, circularList.previous().orElse(null));
     }
 
     @Test
@@ -92,7 +92,7 @@ public class CircularListTest {
         circularList.next();
         circularList.next();
         circularList.reset();
-        assertEquals(circularList.next().orElse(null), element1);
+        assertEquals(element1, circularList.next().orElse(null));
     }
 
 }
