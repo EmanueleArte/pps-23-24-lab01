@@ -9,7 +9,7 @@ import java.util.Optional;
  */
 public class CircularListImpl implements CircularList {
 
-    private int currentIndex = 0;
+    protected int currentIndex = 0;
     private final List<Integer> list;
 
     public CircularListImpl() {
@@ -36,7 +36,8 @@ public class CircularListImpl implements CircularList {
         if (this.list.isEmpty()) {
             return Optional.empty();
         }
-        return Optional.of(this.list.get(this.currentIndex++ % this.list.size()));
+        this.currentIndex = this.currentIndex % this.list.size();
+        return Optional.of(this.list.get(this.currentIndex++));
     }
 
     @Override

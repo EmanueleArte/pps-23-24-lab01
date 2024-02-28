@@ -14,9 +14,14 @@ public class CircularListWithFilteredNextImpl extends CircularListImpl implement
 
     @Override
     public Optional<Integer> filteredNext(Predicate<Integer> condition) {
-        if (this.size() == 0) {
-            return Optional.empty();
-        }
-        return null;
+        int counter = 0;
+        do {
+            final var element = this.next();
+            if (element.isPresent() && condition.test(element.get())) {
+                return element;
+            }
+            counter++;
+        } while (counter < this.size() && this.size() != 0);
+        return Optional.empty();
     }
 }
