@@ -92,4 +92,18 @@ public class CircularListWithIteratorTest {
         assertEquals(element3, backwardIterator.next().orElse(null));
     }
 
+    @Test
+    public void testIterationWhileAddingElements() {
+        assertFalse(circularList.forwardIterator().hasNext());
+        final int element1 = 1;
+        final int element2 = 2;
+        final Iterator<Optional<Integer>> forwardIterator = circularList.backwardIterator();
+        circularList.add(element1);
+        assertTrue(forwardIterator.hasNext());
+        assertEquals(element1, forwardIterator.next().orElse(null));
+        circularList.add(element2);
+        assertTrue(forwardIterator.hasNext());
+        assertEquals(element2, forwardIterator.next().orElse(null));
+    }
+
 }
