@@ -43,7 +43,7 @@ public class CircularListWithIteratorImpl implements CircularListWithIterator {
             @Override
             public Optional<Integer> next() {
                 this.currentIndex = circularizeIndex(this.currentIndex);
-                return Optional.of(list.get(this.currentIndex++));
+                return size() > 0 ? Optional.of(list.get(this.currentIndex++)) : Optional.empty();
             }
 
             private int circularizeIndex(int index) {
@@ -66,7 +66,7 @@ public class CircularListWithIteratorImpl implements CircularListWithIterator {
             @Override
             public Optional<Integer> next() {
                 this.currentIndex = circularizeIndex(this.currentIndex);
-                return Optional.of(list.get(this.currentIndex));
+                return size() > 0 ? Optional.of(list.get(this.currentIndex)) : Optional.empty();
             }
 
             private int circularizeIndex(int index) {
