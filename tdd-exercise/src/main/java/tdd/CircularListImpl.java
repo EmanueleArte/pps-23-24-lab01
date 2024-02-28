@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Implementation of {@link CircularList}.
+ */
 public class CircularListImpl implements CircularList {
 
     private int currentIndex = 0;

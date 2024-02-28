@@ -19,4 +19,6 @@ public class CircularListWithFilteredNextTest {
         circularList = new CircularListWithFilteredNextImpl();
     }
 
+
+
 }
